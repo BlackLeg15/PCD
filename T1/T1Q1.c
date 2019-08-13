@@ -6,7 +6,7 @@
 
 int main(){
     int v[20];
-    int t;
+    float t;
 
     printf("Digite vinte valores inteiros: \n");
 
@@ -16,8 +16,14 @@ int main(){
     }
 
     printf("Digite o intervalo de impressão por segundo: ");
-    scanf("%d",&t);
+    scanf("%f",&t);
     
+    for(i = 0; i < 20; i++){
+        printf("Item %d: %d \n", i+1, v[i]);
+        usleep((1/t) * 1000000);
+    }
+    
+    /*
     int j = 0;
     for(i = 1; i <= 20; i++){
         if (j == t) {
@@ -28,6 +34,6 @@ int main(){
         j++;
     }
 
-
+*/
     return 0;
 }
